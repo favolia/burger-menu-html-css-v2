@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+nav {
+    height: 3rem;
+    width: 100%;
+    background-color: steelblue;
+    display: flex;
+    padding: 0 2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tombol-burger {
+    height: 1.5rem;
+    width: 1.8rem;
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.garis-burger {
+    width: 100%;
+    height: .3rem;
+    border-radius: 2rem;
+    background-color: white;
+}
+
+@media (width <= 640px) {
+
+    .tombol-burger {
+        display: flex !important;
+    }
+
+    .links {
+        display: none !important;
+    }
+}
+
+h1 {
+    color: white;
+}
+
+.links {
+    display: flex;
+    gap: 1rem;
+    color: white;
+}
+
+.links > a {
+    color: inherit;
+}
+
+/* custom halaman burger menunya */
+.burger-page {
+
+    /* biar memenuhi layar */
+    height: 100vh;
+    width: 100%;
+    background-color: steelblue;
+
+    /* ubah dia menjadi display fixed agar menempel di layar biarpun di scroll */
+    position: fixed;
+
+    /* ubah posisi awalnya dia diluar layar bagian atas, agar terlihat sembunyi */
+    top: -100%;
+
+    /* berikan transisi agar tidak kaku */
+    transition: all 200ms ease;
+
+    /* buat dia paling depan, agar tidak tertutup navbar */
+    z-index: 10;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;   
+}
+
+.burger-page > .burger-page-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    height: 3rem;
+    font-size: .8rem;
+}
+
+.burger-page > .burger-page-header > span{
+    color: white;
+    cursor: pointer;
+}
+
+.burger-page > .burger-page-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.burger-page > .burger-page-links > a {
+    color: white;
+}
